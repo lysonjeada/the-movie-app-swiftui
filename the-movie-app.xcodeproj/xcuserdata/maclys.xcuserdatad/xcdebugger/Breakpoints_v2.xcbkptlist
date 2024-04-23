@@ -7,65 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9E8CC93-97B8-44E7-B790-A26C536B525A"
+            uuid = "7810F15C-3A24-4285-B1D5-75D93791E06C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
+            filePath = "the-movie-app/Popular/PopularMoviesPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A - d45308d8e62e1533"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;the_movie_app.PopularMoviesData&gt;, Swift.Int, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt; in the_movie_app.PopularMoviesView.body.getter : some"
-                  moduleName = "the-movie-app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A - 69d1ef2a7886b72d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (the_movie_app.PopularMoviesData) -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;the_movie_app.PopularMoviesData&gt;, Swift.Int, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt; in the_movie_app.PopularMoviesView.body.getter : some"
-                  moduleName = "the-movie-app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setListOfMovies(with:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

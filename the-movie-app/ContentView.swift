@@ -16,7 +16,7 @@ struct DemoApp: App {
     var body: some Scene {
         WindowGroup {
             if appState.hasAuthenticated {
-                PopularMoviesViewFactory.build()
+                        PopularMoviesView()
                     .environmentObject(appState)
             } else {
                 ContentView()
@@ -59,6 +59,7 @@ struct ContentView: View {
         .onAppear {
             authenticator.authenticate { success in
                 if success {
+                    
                     authenticationState = .success
                 } else {
                     authenticationState = .failure
