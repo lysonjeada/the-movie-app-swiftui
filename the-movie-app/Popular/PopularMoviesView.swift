@@ -19,33 +19,39 @@ class PopularMoviesData: ObservableObject, Identifiable {
 
 struct PopularMoviesView: View, PopularMoviesViewProtocol {
     
-    var interactor: PopularMoviesInteractor?
+    @ObservedObject var viewModel = PopularMoviesViewModel()
+    
     @State private var moviesData: [PopularMoviesData] = []
     
     var body: some View {
             VStack {
-                List(moviesData) { movie in
-                    VStack(alignment: .leading) {
-                        Text(movie.name)
-                            .font(.title)
-                        if let imageURL = URL(string: movie.image) {
-                            URLImage(imageURL) { image in
-                                image
+                if viewModel.popularMoviesData.isEmpty {
+                    Text("empty state")
+                } else {
+                    List(viewModel.popularMoviesData) { movie in
+                        VStack(alignment: .leading) {
+                            Text(movie.name)
+                                .font(.title)
+                            if let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(movie.image)") {
+                                URLImage(imageURL) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 150)
+                                }
+                            } else {
+                                Image(systemName: "photo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 100, height: 150)
                             }
-                        } else {
-                            Image(systemName: "photo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 150)
                         }
                     }
                 }
+                
             }
             .onAppear {
-                interactor?.getListOfPopularMovies()
+                viewModel.loadData()
             }
         }
     
@@ -67,11 +73,7 @@ struct PopularMoviesView_Previews: PreviewProvider {
 enum PopularMoviesViewFactory {
     static func build() -> PopularMoviesView {
         var view = PopularMoviesView()
-        let presenter = PopularMoviesPresenter(view: view)
-        let interactor = PopularMoviesInteractor(presenter: presenter)
-        
-        view.interactor = interactor
-        
+    
         return view
     }
 }

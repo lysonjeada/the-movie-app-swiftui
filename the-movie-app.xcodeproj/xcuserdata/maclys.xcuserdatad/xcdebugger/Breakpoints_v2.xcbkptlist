@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9E8CC93-97B8-44E7-B790-A26C536B525A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,42 +14,120 @@
             filePath = "the-movie-app/Popular/PopularMoviesView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "the-movie-app/Popular/PopularMoviesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "loadData()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A - d45308d8e62e1533"
+                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 488fd9b1b291792d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;the_movie_app.PopularMoviesData&gt;, Swift.Int, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt; in the_movie_app.PopularMoviesView.body.getter : some"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesView.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "168">
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
-                  uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A - 69d1ef2a7886b72d"
+                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 91ea96ee74fdec3f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (the_movie_app.PopularMoviesData) -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;the_movie_app.PopularMoviesData&gt;, Swift.Int, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;URLImage.URLImage&lt;SwiftUI.EmptyView, URLImage.ActivityIndicator, SwiftUI.EmptyView, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt; in the_movie_app.PopularMoviesView.body.getter : some"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesView.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "132">
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - b5e6a7c8bf7ffacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 4f4ac7343db53cd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAF77C7C-6DFD-4400-A1DE-4827F7447340"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "the-movie-app/Popular/PopularMoviesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AB8CEAE-193B-4778-8DFE-7B2949D6E7AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
