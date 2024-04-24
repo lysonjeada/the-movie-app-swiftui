@@ -28,38 +28,37 @@ struct MovieDetail: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                switch type {
-                case .popularMovies:
-                    NavigationStack {
-                        TabView {
-                            PopularMoviesView()
-                                .tabItem {
-                                    Image(systemName: "film")
-                                    Text("Popular Movies")
-                                }
-                            TopRatedMovieView()
-                                .tabItem {
-                                    Image(systemName: "film")
-                                    Text("Top Rated Movies")
-                                }
-                            UpcomingMovieView()
-                                .tabItem {
-                                    Image(systemName: "film")
-                                    Text("Upcoming Movies")
-                                }
-                                .toolbarBackground(.automatic, for: .tabBar)
-                        }
-                        
+            switch type {
+            case .popularMovies:
+                NavigationStack {
+                    TabView {
+                        PopularMoviesView()
+                            .tabItem {
+                                Image(systemName: "film")
+                                Text("Popular Movies")
+                            }
+                        TopRatedMovieView()
+                            .tabItem {
+                                Image(systemName: "film")
+                                Text("Top Rated Movies")
+                            }
+                        UpcomingMovieView()
+                            .tabItem {
+                                Image(systemName: "film")
+                                Text("Upcoming Movies")
+                            }
+                            .toolbarBackground(.automatic, for: .tabBar)
                     }
-                case .favoriteMovies:
-                    ListMovieFavoritesView()
+                    
                 }
+            case .favoriteMovies:
+                ListMovieFavoritesView()
             }
-            .padding()
-            .navigationTitle("Movies")
-            .navigationBarItems(leading: closeButton)
+            
+            
         }
+        .padding()
+        .navigationTitle("Movies")
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
     }

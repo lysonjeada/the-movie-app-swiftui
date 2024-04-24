@@ -9,20 +9,15 @@ struct NavigationMovies: View {
     }
     
     var body: some View {
-        NavigationView {
-            List(movies) { movie in
-                Button(action: {
-                    selectedMovie = movie
-                }) {
-                    Text(movie.name)
+            NavigationView {
+                List(movies) { movie in
+                    NavigationLink(destination: MovieDetail(type: movie.type)) {
+                        Text(movie.name)
+                    }
                 }
-            }
-            .navigationTitle("Movies")
-            .sheet(item: $selectedMovie) { movie in
-                MovieDetail(type: movie.type)
+                .navigationTitle("Movies")
             }
         }
-    }
 }
 
 struct NavigationMoviesPreview: PreviewProvider {

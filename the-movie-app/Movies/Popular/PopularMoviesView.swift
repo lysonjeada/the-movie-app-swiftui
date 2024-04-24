@@ -44,7 +44,6 @@ struct PopularMoviesView: View, PopularMoviesViewProtocol {
                 }
                 
             }
-                
         }
         .onAppear {
             viewModel.loadData()
@@ -82,7 +81,7 @@ struct MoviesView: View {
                             .frame(width: 160, height: 300)
                             .clipped()
                             .cornerRadius(8)
-                            .padding(.top, 20)
+                            .padding(.top, 4)
                     }
                 } else {
                     Image(systemName: "photo")
