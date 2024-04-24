@@ -12,11 +12,12 @@ class AppState: ObservableObject {
 @main
 struct DemoApp: App {
     @StateObject var appState = AppState(hasAuthenticated: false)
+    let movies = [MovieInfo(name: "Popular", image: Image(systemName: "film"), type: .popularMovies), .init(name: "Favorites", image: Image(systemName: "film"), type: .favoriteMovies)]
     
     var body: some Scene {
         WindowGroup {
             if appState.hasAuthenticated {
-                PopularMoviesViewFactory.build()
+                NavigationMovies(movies: movies)
                     .environmentObject(appState)
             } else {
                 ContentView()

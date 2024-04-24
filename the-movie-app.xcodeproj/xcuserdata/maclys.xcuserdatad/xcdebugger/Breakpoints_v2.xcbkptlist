@@ -7,93 +7,77 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC4A76B4-AA53-460A-99B3-4774145EEE0A"
+            uuid = "1427BF9A-AEE6-47C2-8D36-C28247D92890"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
+            filePath = "the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "loadData()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "fetchFavoriteMovies(accountId:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 488fd9b1b291792d"
+                  uuid = "1427BF9A-AEE6-47C2-8D36-C28247D92890 - 5f5dd08bec306966"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  symbolName = "the_movie_app.ListFavoriteUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "444">
                </Location>
                <Location
-                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 91ea96ee74fdec3f"
+                  uuid = "1427BF9A-AEE6-47C2-8D36-C28247D92890 - b101752e9c9907c9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoriteUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1700">
                </Location>
                <Location
-                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - b5e6a7c8bf7ffacb"
+                  uuid = "1427BF9A-AEE6-47C2-8D36-C28247D92890 - b101752e9c9907c9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoriteUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "488">
                </Location>
                <Location
-                  uuid = "5F0F44BD-A303-4BE0-999E-2B014D7F2D6C - 4f4ac7343db53cd8"
+                  uuid = "1427BF9A-AEE6-47C2-8D36-C28247D92890 - ec1afb598630548f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in the_movie_app.PopularMoviesViewModel.loadData() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoritesUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "the-movie-app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Popular/PopularMoviesViewModel.swift"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "10"
-                  endingLineNumber = "10"
-                  offsetFromSymbolStart = "60">
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "380">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -101,33 +85,142 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CAF77C7C-6DFD-4400-A1DE-4827F7447340"
+            uuid = "3E8BC56D-C90E-4A23-99C5-8AD5ED2DDDE8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesViewModel.swift"
+            filePath = "the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "loadData()"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "fetchFavoriteMovies(accountId:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E8BC56D-C90E-4A23-99C5-8AD5ED2DDDE8 - 72ad883e1d4b61e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "the_movie_app.ListFavoriteUseCase.returnRequest(accountId: Swift.Int32) -&gt; Foundation.URLRequest"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "968">
+               </Location>
+               <Location
+                  uuid = "3E8BC56D-C90E-4A23-99C5-8AD5ED2DDDE8 - b101752e9c99076e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoriteUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1744">
+               </Location>
+               <Location
+                  uuid = "3E8BC56D-C90E-4A23-99C5-8AD5ED2DDDE8 - ec1afb5986305428"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoritesUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1572">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2AB8CEAE-193B-4778-8DFE-7B2949D6E7AB"
+            uuid = "3BC5677A-9100-4A80-95A1-92AB9A3C3940"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "the-movie-app/Popular/PopularMoviesView.swift"
+            filePath = "the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "fetchFavoriteMovies(accountId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BC5677A-9100-4A80-95A1-92AB9A3C3940 - 72ad883e1d4b668e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "the_movie_app.ListFavoriteUseCase.returnRequest(accountId: Swift.Int32) -&gt; Foundation.URLRequest"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1660">
+               </Location>
+               <Location
+                  uuid = "3BC5677A-9100-4A80-95A1-92AB9A3C3940 - 4af2980af54d7157"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Foundation.URLQueryItem&gt;) -&gt; Swift.Array&lt;Foundation.URLQueryItem&gt; in the_movie_app.ListFavoriteUseCase.returnRequest(accountId: Swift.Int32) -&gt; Foundation.URLRequest"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3BC5677A-9100-4A80-95A1-92AB9A3C3940 - b101752e9c990003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoriteUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  uuid = "3BC5677A-9100-4A80-95A1-92AB9A3C3940 - ec1afb5986305345"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in the_movie_app.ListFavoritesUseCase.fetchFavoriteMovies(accountId: Swift.Int32, completion: (Swift.Result&lt;Swift.Array&lt;the_movie_app.FavoriteMovie&gt;, the_movie_app.MovieDBError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "the-movie-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/the-movie-app/the-movie-app/Movies/Favorite/List/Network/ListFavoriteUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1136">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
