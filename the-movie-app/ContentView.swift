@@ -12,7 +12,7 @@ class AppState: ObservableObject {
 @main
 struct DemoApp: App {
     @StateObject var appState = AppState(hasAuthenticated: false)
-    let movies = [MovieInfo(name: "Popular", image: "film", type: .popularMovies), .init(name: "Favorites", image: "film", type: .favoriteMovies)]
+    let movies = [MovieInfo(movieId: 1, name: "Popular", image: "film", type: .popularMovies), .init(movieId: 2, name: "Favorites", image: "film", type: .favoriteMovies)]
     
     var body: some Scene {
         WindowGroup {

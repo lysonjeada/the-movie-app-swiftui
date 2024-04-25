@@ -1,10 +1,9 @@
 import URLImage
 import SwiftUI
 
-struct MoviesView: View {
-    @State private var isFavorited = false
+struct FavoriteMovieView: View {
+    @State private var isFavorited = true
     let movie: PopularMoviesData
-    let viewModel = FavoritesViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,7 +29,6 @@ struct MoviesView: View {
                 
                 Button(action: {
                     // Toggle favorite state
-                    addFavorite(movieId: movie.id)
                     isFavorited.toggle()
                 }) {
                     Image(systemName: isFavorited ? "heart.fill" : "heart")
@@ -52,9 +50,5 @@ struct MoviesView: View {
         }
         .padding(.horizontal, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    func addFavorite(movieId: Int) {
-        viewModel.addToFavorites(movieId: movieId)
     }
 }

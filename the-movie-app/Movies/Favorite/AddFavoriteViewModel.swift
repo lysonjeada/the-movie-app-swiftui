@@ -37,6 +37,11 @@ class FavoritesViewModel: ObservableObject {
             }
         }
     }
+    
+    
+    func isFavorite(movieId: Int) -> Bool {
+            return favorites.contains { $0.id == movieId }
+        }
 }
 
 struct Movie: Identifiable {

@@ -94,6 +94,7 @@ class MoviesUseCase {
 extension PopularMovie.Movie {
     func toMovieInfo() -> MovieInfo {
         return MovieInfo(
+            movieId: self.id,
             name: self.title,
             image: self.posterPath ?? "",
             type: .popularMovies
@@ -104,6 +105,7 @@ extension PopularMovie.Movie {
 extension TopRatedMovie.Movie {
     func toMovieInfo() -> MovieInfo {
         return MovieInfo(
+            movieId: self.id,
             name: self.title,
             image: self.posterPath ?? "",
             type: .popularMovies
@@ -114,6 +116,7 @@ extension TopRatedMovie.Movie {
 extension UpcomingMovie.Movie {
     func toMovieInfo() -> MovieInfo {
         return MovieInfo(
+            movieId: self.id,
             name: self.title,
             image: self.posterPath ?? "",
             type: .popularMovies

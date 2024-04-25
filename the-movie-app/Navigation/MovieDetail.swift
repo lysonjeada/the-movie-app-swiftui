@@ -8,6 +8,7 @@ enum MovieType {
 
 struct MovieInfo: Identifiable, Hashable {
     var id = UUID()
+    let movieId: Int
     let name: String
     let image: String
     let type: MovieType
@@ -32,26 +33,37 @@ struct MovieDetail: View {
             case .popularMovies:
                 NavigationStack {
                     HomeView()
-                    
                 }
             case .favoriteMovies:
                 ListMovieFavoritesView()
             }
-            
-            
         }
-        .padding()
-        .navigationTitle("Movies")
+        .navigationBarTitle("Movies", displayMode: .inline)
+        .navigationBarBackButtonHidden(true) // Oculta o botão de volta padrão
+        .navigationBarItems(leading: customBackButton)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .edgesIgnoringSafeArea(.leading)
+        .edgesIgnoringSafeArea(.trailing)
+        .background(.black)
+        .background(ignoresSafeAreaEdges: .all)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
     }
     
-    var closeButton: some View {
+    var customBackButton: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "chevron.left")
+                .foregroundColor(.white) // Define a cor do ícone
                 .imageScale(.large)
+                .padding() // Adiciona um pouco de espaço ao redor do ícone
         }
+    }
+}
+
+struct MovieDetailPreview: PreviewProvider {
+    static var previews: some View {
+        MovieDetail(type: .popularMovies)
     }
 }

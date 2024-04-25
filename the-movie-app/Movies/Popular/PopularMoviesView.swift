@@ -15,9 +15,9 @@ enum MovieCategory {
 
 struct HomeView: View {
     @ObservedObject var viewModel = MoviesViewModel()
+    @StateObject var favoritesViewModel = FavoritesViewModel()
     
     var body: some View {
-        
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 ForEach([MovieCategory.popular, MovieCategory.topRated, MovieCategory.upcoming], id: \.self) { category in
@@ -31,27 +31,28 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
                                 ForEach(self.movies(for: category)) { movie in
-                                    MovieCard(movie: movie)
-                                        .frame(width: 160)
+                                    MovieCard(movie: movie, favoritesViewModel: favoritesViewModel)
+                                        .frame(width: 160, height: 350) // Definir altura e largura fixas para a MovieCard
                                 }
                                 Spacer()
                             }
                             .padding(.horizontal)
-                            .background(Color.black.opacity(1.0))
-                            .cornerRadius(12)
+                            .background(Color.black.opacity(0.4))
+                            .cornerRadius(8)
                         }
-                        .padding(.vertical, 12)
+                        .padding(.vertical, 4)
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 0)
                 }
             }
         }
+        .padding(.top, 40)
         .onAppear {
             viewModel.loadPopularMovies()
             viewModel.loadTopRatedMovies()
             viewModel.loadUpcomingMovies()
         }
-        .background(Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)) // Fundo escuro para a tela inteira
+        .background(Color.black.opacity(0.93).edgesIgnoringSafeArea(.all))
     }
     
     private func movies(for category: MovieCategory) -> [MovieInfo] {
@@ -69,7 +70,7 @@ struct HomeView: View {
 struct MovieCard: View {
     @State private var isFavorited = false
     let movie: MovieInfo
-    let viewModel = FavoritesViewModel()
+    let favoritesViewModel: FavoritesViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -84,6 +85,7 @@ struct MovieCard: View {
                             .cornerRadius(8)
                             .padding(.top, 4)
                     }
+                    .scaledToFill()
                 } else {
                     Image(systemName: "photo")
                         .resizable()
@@ -94,8 +96,6 @@ struct MovieCard: View {
                 }
                 
                 Button(action: {
-                    // Toggle favorite state
-                    addFavorite(movieId: movie.id.toInt())
                     isFavorited.toggle()
                 }) {
                     Image(systemName: isFavorited ? "heart.fill" : "heart")
@@ -108,17 +108,25 @@ struct MovieCard: View {
                 .padding(.bottom, 10)
                 .padding(.trailing, 10)
             }
-            
             Text(movie.name)
-                .font(.caption)
-                .foregroundColor(.white) // Texto do filme em branco
-                .lineLimit(2)
-                .padding(.horizontal)
+                .font(.caption2)
+                .foregroundColor(.white)
+                .padding(.bottom)
+        }
+        
+        .padding(.horizontal)
+        .clipped()
+        .onTapGesture {
+            addFavorite(movieId: movie.movieId)
+            isFavorited.toggle()
+        }
+        .onAppear {
+            isFavorited = favoritesViewModel.isFavorite(movieId: movie.movieId)
         }
     }
     
     func addFavorite(movieId: Int) {
-        viewModel.addToFavorites(movieId: movieId)
+        favoritesViewModel.addToFavorites(movieId: movieId)
     }
 }
 
@@ -128,27 +136,3 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-extension Int {
-    func toUUID() -> UUID {
-        var bytes: [UInt8] = []
-        var mutableSelf = self
-        for _ in 0..<MemoryLayout.size(ofValue: self) {
-            bytes.append(UInt8(truncatingIfNeeded: mutableSelf))
-            mutableSelf >>= 8
-        }
-        return UUID(uuid: (bytes[0], bytes[1], bytes[2], bytes[3],
-                           bytes[4], bytes[5], bytes[6], bytes[7],
-                           bytes[8], bytes[9], bytes[10], bytes[11],
-                           bytes[12], bytes[13], bytes[14], bytes[15]))
-    }
-}
-
-extension UUID {
-    func toInt() -> Int {
-        let uuidString = self.uuidString.replacingOccurrences(of: "-", with: "")
-        guard let intVal = Int(uuidString, radix: 16) else {
-            fatalError("Failed to convert UUID to Int")
-        }
-        return intVal
-    }
-}

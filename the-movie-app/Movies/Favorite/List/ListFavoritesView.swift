@@ -20,13 +20,14 @@ struct ListMovieFavoritesView: View {
                 ScrollView {
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 16) {
                         ForEach(viewModel.favorites, id: \.id) { movie in
-                            MoviesView(movie: movie)
+                            FavoriteMovieView(movie: movie)
                         }
                     }
                     .padding(.horizontal) // Ajuste opcional se desejar algum espaço adicional nos lados
                 }
             }
         }
+        .padding(.top, 20)
         .onAppear {
             viewModel.fetchFavorites()
         }

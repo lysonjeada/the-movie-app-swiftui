@@ -9,7 +9,7 @@ struct NavigationMovies: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ZStack {
                     Image("us-background")
@@ -31,12 +31,8 @@ struct NavigationMovies: View {
                     
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.leading)
-            .edgesIgnoringSafeArea(.trailing)
-            .background(.black)
-            .background(ignoresSafeAreaEdges: .all)
-            .navigationTitle("Movies")
+            .navigationBarTitle("Movies", displayMode: .large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -64,8 +60,8 @@ struct ContentCell: View {
 struct NavigationMoviesPreview: PreviewProvider {
     static var previews: some View {
         NavigationMovies(movies: [
-            .init(name: "Popular", image: "film", type: .popularMovies),
-            .init(name: "Favorites", image: "film", type: .favoriteMovies)
+            .init(movieId: 1, name: "Popular", image: "film", type: .popularMovies),
+            .init(movieId: 2, name: "Favorites", image: "film", type: .favoriteMovies)
         ])
     }
 }
