@@ -9,7 +9,7 @@ enum MovieType {
 struct MovieInfo: Identifiable, Hashable {
     var id = UUID()
     let name: String
-    let image: Image
+    let image: String
     let type: MovieType
     
     func hash(into hasher: inout Hasher) {
@@ -31,24 +31,7 @@ struct MovieDetail: View {
             switch type {
             case .popularMovies:
                 NavigationStack {
-                    TabView {
-                        PopularMoviesView()
-                            .tabItem {
-                                Image(systemName: "film")
-                                Text("Popular Movies")
-                            }
-                        TopRatedMovieView()
-                            .tabItem {
-                                Image(systemName: "film")
-                                Text("Top Rated Movies")
-                            }
-                        UpcomingMovieView()
-                            .tabItem {
-                                Image(systemName: "film")
-                                Text("Upcoming Movies")
-                            }
-                            .toolbarBackground(.automatic, for: .tabBar)
-                    }
+                    HomeView()
                     
                 }
             case .favoriteMovies:

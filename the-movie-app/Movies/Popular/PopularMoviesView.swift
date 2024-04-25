@@ -1,73 +1,74 @@
 import SwiftUI
 import URLImage
 
-protocol PopularMoviesViewProtocol {
-    mutating func setMoviesData(with moviesData: [PopularMoviesData])
-}
-
-class PopularMoviesData: ObservableObject, Identifiable {
-    @Published var id: Int
-    @Published var image: String
-    @Published var name: String
+enum MovieCategory {
+    case popular, topRated, upcoming
     
-    init(id: Int, image: String, name: String) {
-        self.id = id
-        self.image = image
-        self.name = name
+    var title: String {
+        switch self {
+        case .popular: return "Popular"
+        case .topRated: return "Top Rated"
+        case .upcoming: return "Upcoming"
+        }
     }
 }
 
-struct PopularMoviesView: View, PopularMoviesViewProtocol {
-    
-    @ObservedObject var viewModel = PopularMoviesViewModel()
-    
-    @State private var moviesData: [PopularMoviesData] = []
-    
-    let columns = [
-        GridItem(.fixed(50)),
-        GridItem(.fixed(50))
-    ]
+struct HomeView: View {
+    @ObservedObject var viewModel = MoviesViewModel()
     
     var body: some View {
-        VStack {
-            if viewModel.popularMoviesData.isEmpty {
-                Text("empty state")
-            } else {
-                ScrollView {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 16) {
-                        ForEach(viewModel.popularMoviesData, id: \.id) { movie in
-                            MoviesView(movie: movie)
+        
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                ForEach([MovieCategory.popular, MovieCategory.topRated, MovieCategory.upcoming], id: \.self) { category in
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text(category.title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 16) {
+                                ForEach(self.movies(for: category)) { movie in
+                                    MovieCard(movie: movie)
+                                        .frame(width: 160)
+                                }
+                                Spacer()
+                            }
+                            .padding(.horizontal)
+                            .background(Color.black.opacity(1.0))
+                            .cornerRadius(12)
                         }
+                        .padding(.vertical, 12)
                     }
-                    
-                    .padding(.horizontal)
+                    .padding(.horizontal, 16)
                 }
-                
             }
         }
         .onAppear {
-            viewModel.loadData()
+            viewModel.loadPopularMovies()
+            viewModel.loadTopRatedMovies()
+            viewModel.loadUpcomingMovies()
         }
+        .background(Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)) // Fundo escuro para a tela inteira
     }
     
-    mutating func setMoviesData(with moviesData: [PopularMoviesData]) {
-        self.moviesData = moviesData
+    private func movies(for category: MovieCategory) -> [MovieInfo] {
+        switch category {
+        case .popular:
+            return viewModel.popularMovies
+        case .topRated:
+            return viewModel.topRatedMovies
+        case .upcoming:
+            return viewModel.upcomingMovies
+        }
     }
 }
 
-#Preview {
-    PopularMoviesView_Previews.previews
-}
-
-struct PopularMoviesView_Previews: PreviewProvider {
-    static var previews: some View {
-        return PopularMoviesView()
-    }
-}
-
-struct MoviesView: View {
+struct MovieCard: View {
     @State private var isFavorited = false
-    let movie: PopularMoviesData
+    let movie: MovieInfo
     let viewModel = FavoritesViewModel()
     
     var body: some View {
@@ -78,7 +79,7 @@ struct MoviesView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 160, height: 300)
+                            .frame(width: 160, height: 250)
                             .clipped()
                             .cornerRadius(8)
                             .padding(.top, 4)
@@ -87,14 +88,14 @@ struct MoviesView: View {
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 150)
+                        .frame(width: 160, height: 250)
                         .clipped()
                         .cornerRadius(8)
                 }
                 
                 Button(action: {
                     // Toggle favorite state
-                    addFavorite(movieId: movie.id)
+                    addFavorite(movieId: movie.id.toInt())
                     isFavorited.toggle()
                 }) {
                     Image(systemName: isFavorited ? "heart.fill" : "heart")
@@ -110,12 +111,10 @@ struct MoviesView: View {
             
             Text(movie.name)
                 .font(.caption)
-                .foregroundColor(.primary)
+                .foregroundColor(.white) // Texto do filme em branco
                 .lineLimit(2)
-                .padding(.top, 4)
+                .padding(.horizontal)
         }
-        .padding(.horizontal, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     func addFavorite(movieId: Int) {
@@ -123,15 +122,33 @@ struct MoviesView: View {
     }
 }
 
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
 
-struct SideMenuView: View {
-    @Binding var isShowingMenu: Bool
-    
-    var body: some View {
-        // Conteúdo do menu lateral
-        Text("Side Menu")
-            .onTapGesture {
-                isShowingMenu.toggle()
-            }
+extension Int {
+    func toUUID() -> UUID {
+        var bytes: [UInt8] = []
+        var mutableSelf = self
+        for _ in 0..<MemoryLayout.size(ofValue: self) {
+            bytes.append(UInt8(truncatingIfNeeded: mutableSelf))
+            mutableSelf >>= 8
+        }
+        return UUID(uuid: (bytes[0], bytes[1], bytes[2], bytes[3],
+                           bytes[4], bytes[5], bytes[6], bytes[7],
+                           bytes[8], bytes[9], bytes[10], bytes[11],
+                           bytes[12], bytes[13], bytes[14], bytes[15]))
+    }
+}
+
+extension UUID {
+    func toInt() -> Int {
+        let uuidString = self.uuidString.replacingOccurrences(of: "-", with: "")
+        guard let intVal = Int(uuidString, radix: 16) else {
+            fatalError("Failed to convert UUID to Int")
+        }
+        return intVal
     }
 }

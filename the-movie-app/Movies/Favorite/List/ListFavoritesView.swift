@@ -23,13 +23,14 @@ struct ListMovieFavoritesView: View {
                             MoviesView(movie: movie)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal) // Ajuste opcional se desejar algum espaço adicional nos lados
                 }
             }
         }
         .onAppear {
             viewModel.fetchFavorites()
         }
+        .background(Color.black.opacity(0.9).edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -43,3 +44,14 @@ struct ListMovieFavoritesView_Previews: PreviewProvider {
     }
 }
 
+class PopularMoviesData: ObservableObject, Identifiable {
+    @Published var id: Int
+    @Published var image: String
+    @Published var name: String
+    
+    init(id: Int, image: String, name: String) {
+        self.id = id
+        self.image = image
+        self.name = name
+    }
+}
